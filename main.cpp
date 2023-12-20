@@ -1,8 +1,13 @@
 #include <iostream>
+#include <numeric>
 #include "HashTable.h"
 using namespace std;
 
-//STA AKO LINEARNA UDJE U BESKONACNU PETLJU!!!!!!!!!!!
+int inputKey() {
+    int key;
+    cout << endl << "Unesite kljuc: "; cin >> key;
+    return key;
+}
 
 int main() {
     int exercise = -1;
@@ -16,14 +21,19 @@ int main() {
     if (exercise == 1) {
         int size, step;
         cout << endl << "Unesite velicinu tabele: "; cin >> size;
-        cout << endl << "Unesite korak linearnog adresiranja: "; cin >> step;
+        do {
+            cout << "Unesite korak linearnog adresiranja: ";
+            cin >> step;
+        }
+        while (step != 1 && gcd(size, step) != 1);
         HashTable hashMap = HashTable(size, step);
-        int index;
+        int index, key;
+        string value;
         do {
             cout << endl << "Izaberite opciju:" << endl;
-            cout << "1)findKey()" << endl;
-            cout << "2)insertKey()" << endl;
-            cout << "3)deleteKey()" << endl;
+            cout << "1)findKey(int key)" << endl;
+            cout << "2)insertKey(int key, string value)" << endl;
+            cout << "3)deleteKey(int key)" << endl;
             cout << "4)avgAccessSuccess()" << endl;
             cout << "5)avgAccessUnsuccess()" << endl;
             cout << "6)resetStatistics()" << endl;
@@ -31,43 +41,54 @@ int main() {
             cout << "8)keyCount()" << endl;
             cout << "9)tableSize()" << endl;
             cout << "10)fillRatio()" << endl;
+            cout << "11)stampa" << endl;
+            cout << "12)kraj" << endl;
             cin >> index;
             switch (index) {
                 case 1:
-                    cout << "";
+                    key = inputKey();
+                    if (hashMap.findKey(key))
+                        cout << endl << hashMap.index(key) << " " << *hashMap.findKey(key) << " " << key << endl;
+                    else cout << endl << "Kljuc nije pronadjen." << endl;
                     break;
                 case 2:
-                    cout << "";
+                    key = inputKey();
+                    cout << "Unesite string: "; cin >> value;
+                    hashMap.insertKey(key, value);
                     break;
                 case 3:
-                    cout << "";
+                    key = inputKey();
+                    hashMap.deleteKey(key);
                     break;
                 case 4:
-                    cout << "";
+                    cout << endl << "AvgAccessSuccess: " << hashMap.avgAccessSuccess() << endl;
                     break;
                 case 5:
-                    cout << "";
+                    cout << endl << "AvgAccessUnsuccess: " << hashMap.avgAccessUnsuccess() << endl;
                     break;
                 case 6:
-                    cout << "";
+                    hashMap.resetStatistics();
                     break;
                 case 7:
-                    cout << "";
+                    hashMap.clear();
                     break;
                 case 8:
-                    cout << "";
+                    cout << endl << "Broj kljuceva: " << hashMap.keyCount() << endl;
                     break;
                 case 9:
-                    cout << "";
+                    cout << endl << "Velicina tabele: " << hashMap.tableSize() << endl;
                     break;
                 case 10:
-                    cout << "";
+                    cout << endl << "Fill ratio: " << hashMap.fillRatio() << endl;
+                    break;
+                case 11:
+                    cout << hashMap;
                     break;
                 default:
                     break;
             }
         }
-        while (index != 10);
+        while (index != 12);
     } else {
         //modifikacija
     }

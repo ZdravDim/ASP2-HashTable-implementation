@@ -8,102 +8,102 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ASP3">
-				<Option output="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/ASP3.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug"/>
+				<Option output="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/ASP3.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 ASP3"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 ASP3"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ASP3/fast">
-				<Option output="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/ASP3.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug"/>
+				<Option output="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/ASP3.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
-					<Add directory="C:/Program Files/JetBrains/CLion 2023.1.3/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 ASP3/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 ASP3/fast"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Dimitrije/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Korisnik/Desktop/ASP-HashTable/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/AdressFunction.cpp">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/AdressFunction.cpp">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/AdressFunction.h">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/AdressFunction.h">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/HashTable.cpp">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/HashTable.cpp">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/HashTable.h">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/HashTable.h">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/LinearHashing.cpp">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/LinearHashing.cpp">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/LinearHashing.h">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/LinearHashing.h">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/main.cpp">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/main.cpp">
 			<Option target="ASP3"/>
 		</Unit>
-		<Unit filename="C:/Users/Dimitrije/Desktop/ASP-HashTable/CMakeLists.txt">
+		<Unit filename="C:/Users/Korisnik/Desktop/ASP-HashTable/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

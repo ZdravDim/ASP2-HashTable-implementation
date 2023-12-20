@@ -5,11 +5,11 @@
 
 class LinearHashing : public AddressFunction {
 public:
-    LinearHashing(int s) : s(s) {}
-    int getAddress(int k, int a, int i) override { return a + i * s; }
+    LinearHashing(int step) : step(step) {}
+    int getAddress(int key, int address, int attempt) override;
 
 private:
-    int s;
+    int step;
 };
 
 

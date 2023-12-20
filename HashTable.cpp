@@ -21,12 +21,12 @@ bool HashTable::insertKey(int key, string value) {
 }
 
 bool HashTable::deleteKey(int key) {
-    int address = hashMethod(key);
-    if (map[address].length()) {
-        map[address] = "";
+    if (findKey(key)) {
+        *findKey(key) = "";
         --numOfKeys;
         return true;
     }
+    cout << endl << "Greska pri brisanju: Kljuc ne postoji." << endl;
     return false;
 }
 
@@ -63,7 +63,7 @@ double HashTable::fillRatio() {
 ostream &operator<<(ostream &os, const HashTable &table) {
     os << endl << "Tabela:" << endl;
     for (int i = 0; i < table.hashTableSize; ++i)
-        os << i << " -> " << (table.map[i].length() ? table.map[i] : "EMPTY") << endl;
+        os << i << " " << (table.map[i].length() ? table.map[i] : "EMPTY") << endl;
     return os;
 }
 

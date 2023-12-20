@@ -1,0 +1,3 @@
+C:/Users/Korisnik/CLionProjects/ASP3/cmake-build-debug/CMakeFiles/ASP3.dir
+C:/Users/Korisnik/CLionProjects/ASP3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Korisnik/CLionProjects/ASP3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

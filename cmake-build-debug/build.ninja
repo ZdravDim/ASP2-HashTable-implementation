@@ -61,6 +61,18 @@ build CMakeFiles/ASP3.dir/HashTable.cpp.obj: CXX_COMPILER__ASP3_Debug C$:/Users/
   OBJECT_DIR = CMakeFiles\ASP3.dir
   OBJECT_FILE_DIR = CMakeFiles\ASP3.dir
 
+build CMakeFiles/ASP3.dir/AdressFunction.cpp.obj: CXX_COMPILER__ASP3_Debug C$:/Users/Korisnik/CLionProjects/ASP3/AdressFunction.cpp || cmake_object_order_depends_target_ASP3
+  DEP_FILE = CMakeFiles\ASP3.dir\AdressFunction.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ASP3.dir
+  OBJECT_FILE_DIR = CMakeFiles\ASP3.dir
+
+build CMakeFiles/ASP3.dir/LinearHashing.cpp.obj: CXX_COMPILER__ASP3_Debug C$:/Users/Korisnik/CLionProjects/ASP3/LinearHashing.cpp || cmake_object_order_depends_target_ASP3
+  DEP_FILE = CMakeFiles\ASP3.dir\LinearHashing.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\ASP3.dir
+  OBJECT_FILE_DIR = CMakeFiles\ASP3.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ASP3
@@ -69,7 +81,7 @@ build CMakeFiles/ASP3.dir/HashTable.cpp.obj: CXX_COMPILER__ASP3_Debug C$:/Users/
 #############################################
 # Link the executable ASP3.exe
 
-build ASP3.exe: CXX_EXECUTABLE_LINKER__ASP3_Debug CMakeFiles/ASP3.dir/main.cpp.obj CMakeFiles/ASP3.dir/HashTable.cpp.obj
+build ASP3.exe: CXX_EXECUTABLE_LINKER__ASP3_Debug CMakeFiles/ASP3.dir/main.cpp.obj CMakeFiles/ASP3.dir/HashTable.cpp.obj CMakeFiles/ASP3.dir/AdressFunction.cpp.obj CMakeFiles/ASP3.dir/LinearHashing.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ASP3.dir

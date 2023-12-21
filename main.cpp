@@ -4,10 +4,95 @@
 #include "HashTable.h"
 using namespace std;
 
+void performanceInput(int &numOfKeys, int* &keys, string* &values) {
+    cout << "Unesite broj kljuceva u tabeli: "; cin >> numOfKeys;
+    keys = new int[numOfKeys];
+    values = new string[numOfKeys];
+    for (int i = 0; i < numOfKeys; ++i) {
+        cout << "Kljuc[" << i << "]: "; cin >> keys[i];
+        cout << "String[" << i << "]: "; cin >> values[i];
+    }
+}
+
+void tableInput(int &size, int &step) {
+    cout << endl << "Unesite velicinu tabele: "; cin >> size;
+    do {
+        cout << "Unesite korak linearnog adresiranja: ";
+        cin >> step;
+    }
+    while (gcd(size, step) != 1);
+}
+
 int inputKey() {
     int key;
     cout << endl << "Unesite kljuc: "; cin >> key;
     return key;
+}
+
+void mainFunction(HashTable &hashMap) {
+    int index, key;
+    string value;
+    do {
+        cout << endl << "Izaberite opciju:" << endl;
+        cout << "1)findKey(int key)" << endl;
+        cout << "2)insertKey(int key, string value)" << endl;
+        cout << "3)deleteKey(int key)" << endl;
+        cout << "4)clear()" << endl;
+        cout << "5)keyCount()" << endl;
+        cout << "6)tableSize()" << endl;
+        cout << "7)fillRatio()" << endl;
+        cout << "8)stampa" << endl;
+        cout << "9)performanse" << endl;
+        cout << "10)kraj" << endl;
+        cin >> index;
+        switch (index) {
+            case 1:
+                key = inputKey();
+                if (hashMap.findKey(key))
+                    cout << endl << hashMap.index(key) << " " << *hashMap.findKey(key) << " " << key << endl;
+                else cout << endl << "Kljuc nije pronadjen." << endl;
+                break;
+            case 2:
+                key = inputKey();
+                cout << "Unesite string: "; cin >> value;
+                hashMap.insertKey(key, value);
+                break;
+            case 3:
+                key = inputKey();
+                hashMap.deleteKey(key);
+                break;
+            case 4:
+                hashMap.clear();
+                break;
+            case 5:
+                cout << endl << "Broj kljuceva: " << hashMap.keyCount() << endl;
+                break;
+            case 6:
+                cout << endl << "Velicina tabele: " << hashMap.tableSize() << endl;
+                break;
+            case 7:
+                cout << endl << "Fill ratio: " << hashMap.fillRatio() << endl;
+                break;
+            case 8:
+                cout << hashMap;
+                break;
+            case 9:
+                int size2, step2;
+                tableInput(size2, step2);
+
+                int numberOfKeys, *keysArray = nullptr;
+                string *valuesArray = nullptr;
+                performanceInput(numberOfKeys, keysArray, valuesArray);
+
+                HashTable hashMap2 = HashTable(size2, step2);
+                hashMap2.performance(numberOfKeys, keysArray, valuesArray, 10 * numberOfKeys);
+
+                delete[] keysArray;
+                delete[] valuesArray;
+                break;
+        }
+    }
+    while (index != 10);
 }
 
 int main() {
@@ -19,16 +104,12 @@ int main() {
         cin >> exercise;
     }
     while (exercise < 1 || exercise > 2);
-    if (exercise == 1) {
-        int size, step;
-        cout << endl << "Unesite velicinu tabele: "; cin >> size;
-        do {
-            cout << "Unesite korak linearnog adresiranja: ";
-            cin >> step;
-        }
-        while (step != 1 && gcd(size, step) != 1);
-        HashTable hashMap = HashTable(size, step);
 
+    int size, step;
+    tableInput(size, step);
+    HashTable hashMap = HashTable(size, step);
+
+    if (exercise == 1) {
         int openFile;
         do {
             cout << endl << "Unos podataka iz datoteke?" << endl << "0)ne" << endl << "1)da" << endl;
@@ -40,84 +121,21 @@ int main() {
             try {
                 ifstream inputFile("DZ3_Recnik_10K.txt");
                 while (getline(inputFile, line)) {
-                    int index = line.length() - 1, key = -1;
+                    int index = (int)(line.length() - 1), key;
                     string value;
                     while (line[index - 1] != '\t') --index;
                     key = stoi(line.substr(index, line.length() - index + 1));
                     index = 0;
                     while (line[index] != '\t') ++index;
                     value = line.substr(0, index);
-                    hashMap.insertKey(key, value);
+                    hashMap.insertKey(key, value, false);
                 }
             }
             catch (...) {
                 cout << endl << "Greska pri citanju iz fajla." << endl;
             }
         }
-
-        int index, key;
-        string value;
-        do {
-            cout << endl << "Izaberite opciju:" << endl;
-            cout << "1)findKey(int key)" << endl;
-            cout << "2)insertKey(int key, string value)" << endl;
-            cout << "3)deleteKey(int key)" << endl;
-            cout << "4)avgAccessSuccess()" << endl;
-            cout << "5)avgAccessUnsuccess()" << endl;
-            cout << "6)resetStatistics()" << endl;
-            cout << "7)clear()" << endl;
-            cout << "8)keyCount()" << endl;
-            cout << "9)tableSize()" << endl;
-            cout << "10)fillRatio()" << endl;
-            cout << "11)stampa" << endl;
-            cout << "12)kraj" << endl;
-            cin >> index;
-            switch (index) {
-                case 1:
-                    key = inputKey();
-                    if (hashMap.findKey(key))
-                        cout << endl << hashMap.index(key) << " " << *hashMap.findKey(key) << " " << key << endl;
-                    else cout << endl << "Kljuc nije pronadjen." << endl;
-                    break;
-                case 2:
-                    key = inputKey();
-                    cout << "Unesite string: "; cin >> value;
-                    hashMap.insertKey(key, value);
-                    break;
-                case 3:
-                    key = inputKey();
-                    hashMap.deleteKey(key);
-                    break;
-                case 4:
-                    cout << endl << "AvgAccessSuccess: " << hashMap.avgAccessSuccess() << endl;
-                    break;
-                case 5:
-                    cout << endl << "AvgAccessUnsuccess: " << hashMap.avgAccessUnsuccess() << endl;
-                    break;
-                case 6:
-                    hashMap.resetStatistics();
-                    break;
-                case 7:
-                    hashMap.clear();
-                    break;
-                case 8:
-                    cout << endl << "Broj kljuceva: " << hashMap.keyCount() << endl;
-                    break;
-                case 9:
-                    cout << endl << "Velicina tabele: " << hashMap.tableSize() << endl;
-                    break;
-                case 10:
-                    cout << endl << "Fill ratio: " << hashMap.fillRatio() << endl;
-                    break;
-                case 11:
-                    cout << hashMap;
-                    break;
-                default:
-                    break;
-            }
-        }
-        while (index != 12);
-    } else {
-        //modifikacija
     }
+    else hashMap.setAdaptive();
+    mainFunction(hashMap);
 }

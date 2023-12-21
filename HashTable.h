@@ -7,16 +7,16 @@ using namespace std;
 
 class HashTable {
 public:
-    HashTable(int size, int s) : primeN(findN(size)), hashTableSize(size), values(new string[size]), keys(new int[size]), linearHashing(new LinearHashing(s)) {
+    HashTable(int size, int s) : initialSize(size), primeN(findN(size)), hashTableSize(size), values(new string[size]), keys(new int[size]), linearHashing(new LinearHashing(s)) {
         for (int i = 0; i < size; ++i) {
             values[i] = "";
             keys[i] = -1;
         }
     }
-    ~HashTable() { delete linearHashing; delete[] values; }
+    ~HashTable() { delete linearHashing; delete[] values; delete[] keys; }
 
-    string* findKey(int key);
-    bool insertKey(int key, string value);
+    string* findKey(int key, bool calculatePerformance = false);
+    bool insertKey(int key, string value, bool printError = true);
     bool deleteKey(int key);
     double avgAccessSuccess() const;
     double avgAccessUnsuccess() const;
@@ -27,12 +27,20 @@ public:
     double fillRatio() const;
     friend ostream& operator<<(ostream& os, const HashTable& table);
     int index(int key);
+    void performance(int numberOfKeys, int *keysArray, string *valuesArray, int numOfRandomKeys);
+    void setAdaptive();
 
 private:
     int hashMethod(int key) const;
     static bool isPrimeNumber(int number);
     static int findN(int n);
+    void adapt();
+    void privateInsert(int key, string value);
+    void changeTableSize(int newSize);
+    void privatePerformance();
 
+    int initialSize;
+    bool adaptive = false;
     int primeN = -1;
     int hashTableSize = -1, numOfKeys = 0;
     int numSuccess = 0, totalSuccess = 0;

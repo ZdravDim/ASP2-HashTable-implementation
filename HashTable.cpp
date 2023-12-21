@@ -2,7 +2,7 @@
 #include <random>
 #include "HashTable.h"
 #define COEFFICIENT 2
-#define AVG_LIMIT 0.5
+#define AVG_LIMIT 2
 #define SIZE_UP 0.7
 using namespace std;
 
@@ -68,11 +68,11 @@ bool HashTable::deleteKey(int key) {
 }
 
 double HashTable::avgAccessSuccess() const {
-    return totalSuccess ? numSuccess / (double)totalSuccess : 0;
+    return totalSuccess ? (double)totalSuccess / numSuccess : 0;
 }
 
 double HashTable::avgAccessUnsuccess() const {
-    return totalUnsuccess ? numUnsuccess / (double)totalUnsuccess : 0;
+    return totalUnsuccess ? (double)totalUnsuccess / numUnsuccess : 0;
 }
 
 void HashTable::resetStatistics() {
@@ -210,23 +210,26 @@ void HashTable::changeTableSize(int newSize) {
 
 void HashTable::privatePerformance() {
     int min, max;
-    min = max = keys[0];
+    for (int i = 0; i < hashTableSize; ++i)
+        if (keys[i] >= 0) {
+            min = max = keys[i];
+            break;
+        }
 
-    for (int i = 0; i < numOfKeys; ++i){
-        if (keys[i] > max) max = keys[i];
-        else if (keys[i] < min) min = keys[i];
+    for (int i = 0; i < hashTableSize; ++i) {
+        if (keys[i] >= 0) {
+            if (keys[i] > max) max = keys[i];
+            else if (keys[i] < min) min = keys[i];
+        }
     }
 
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dist(min, max);
-
-    for (int i = 0; i < 10 * numOfKeys; ++i) {
-        int randomNumber = dist(gen);
-        findKey(randomNumber, true);
-    }
+    int cnt = 0;
+    for (int i = 0; i < hashTableSize; ++i)
+        if (keys[i] >= 0) {
+            findKey(keys[i], true);
+            if (++cnt == numOfKeys) break;
+        }
 
     if (avgAccessSuccess() >= AVG_LIMIT || avgAccessUnsuccess() >= AVG_LIMIT) adapt();
-
     resetStatistics();
 }

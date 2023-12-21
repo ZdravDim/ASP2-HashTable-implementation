@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <numeric>
 #include "HashTable.h"
 using namespace std;
@@ -27,6 +28,33 @@ int main() {
         }
         while (step != 1 && gcd(size, step) != 1);
         HashTable hashMap = HashTable(size, step);
+
+        int openFile;
+        do {
+            cout << endl << "Unos podataka iz datoteke?" << endl << "0)ne" << endl << "1)da" << endl;
+            cin >> openFile;
+        }
+        while (openFile < 0 || openFile > 1);
+        if (openFile) {
+            string line;
+            try {
+                ifstream inputFile("DZ3_Recnik_10K.txt");
+                while (getline(inputFile, line)) {
+                    int index = line.length() - 1, key = -1;
+                    string value;
+                    while (line[index - 1] != '\t') --index;
+                    key = stoi(line.substr(index, line.length() - index + 1));
+                    index = 0;
+                    while (line[index] != '\t') ++index;
+                    value = line.substr(0, index);
+                    hashMap.insertKey(key, value);
+                }
+            }
+            catch (...) {
+                cout << endl << "Greska pri citanju iz fajla." << endl;
+            }
+        }
+
         int index, key;
         string value;
         do {

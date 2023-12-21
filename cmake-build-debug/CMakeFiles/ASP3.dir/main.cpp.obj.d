@@ -135,6 +135,11 @@ CMakeFiles/ASP3.dir/main.cpp.obj: \
  D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
+ D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/fstream \
+ D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/codecvt.h \
+ D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/fstream.tcc \
  D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/numeric \
  D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_numeric.h \
  D:/CLion\ 2023.1.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bit \

@@ -130,6 +130,7 @@ int main() {
                     value = line.substr(0, index);
                     hashMap.insertKey(key, value, false);
                 }
+                inputFile.close();
             }
             catch (...) {
                 cout << endl << "Greska pri citanju iz fajla." << endl;

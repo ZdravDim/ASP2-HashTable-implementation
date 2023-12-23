@@ -7,7 +7,7 @@
 using namespace std;
 
 string *HashTable::findKey(int key, bool calculatePerformance) {
-    int stepsCounter = 0;
+    int stepsCounter = 1;
     int address = hashMethod(key), startAddress = address;
     if (keys[address] == key) {
         if (calculatePerformance) {
@@ -16,12 +16,19 @@ string *HashTable::findKey(int key, bool calculatePerformance) {
         }
         return &values[address];
     }
+    else if (keys[address] == -1) {
+        if (calculatePerformance) {
+            ++totalUnsuccess;
+            ++numUnsuccess;
+        }
+        return nullptr;
+    }
     address = linearHashing -> getAddress(key, startAddress, ++stepsCounter) % hashTableSize;
     while (address != startAddress && keys[address] != key && keys[address] != -1)
         address = linearHashing -> getAddress(key, startAddress, ++stepsCounter) % hashTableSize;
     if (keys[address] == key) {
         if (calculatePerformance) {
-            totalSuccess += stepsCounter + 1;
+            totalSuccess += stepsCounter;
             ++numSuccess;
         }
         return &values[address];
@@ -136,21 +143,24 @@ int HashTable::index(int key) {
     return (int)(findKey(key) - values);
 }
 
-void HashTable::performance(int numberOfKeys, int *keysArray, string *valuesArray, int numOfRandomKeys) {
+void HashTable::performance() {
+    resetStatistics();
     int min, max;
-    min = max = keysArray[0];
+    for (int i = 0; i < hashTableSize; ++i)
+        if (values[i].length())
+            min = max = keys[i];
 
-    for (int i = 0; i < numberOfKeys; ++i){
-        insertKey(keysArray[i], valuesArray[i]);
-        if (keysArray[i] > max) max = keysArray[i];
-        else if (keysArray[i] < min) min = keysArray[i];
-    }
+    for (int i = 0; i < hashTableSize; ++i)
+        if (values[i].length()) {
+            if (keys[i] > max) max = keys[i];
+            else if (keys[i] < min) min = keys[i];
+        }
 
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> dist(min, max);
 
-    for (int i = 0; i < numOfRandomKeys; ++i) {
+    for (int i = 0; i < 10 * numOfKeys; ++i) {
         int randomNumber = dist(gen);
         findKey(randomNumber, true);
     }

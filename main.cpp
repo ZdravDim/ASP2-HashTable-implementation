@@ -4,16 +4,6 @@
 #include "HashTable.h"
 using namespace std;
 
-void performanceInput(int &numOfKeys, int* &keys, string* &values) {
-    cout << "Unesite broj kljuceva u tabeli: "; cin >> numOfKeys;
-    keys = new int[numOfKeys];
-    values = new string[numOfKeys];
-    for (int i = 0; i < numOfKeys; ++i) {
-        cout << "Kljuc[" << i << "]: "; cin >> keys[i];
-        cout << "String[" << i << "]: "; cin >> values[i];
-    }
-}
-
 void tableInput(int &size, int &step) {
     cout << endl << "Unesite velicinu tabele: "; cin >> size;
     do {
@@ -77,19 +67,7 @@ void mainFunction(HashTable &hashMap) {
                 cout << hashMap;
                 break;
             case 9:
-                int size2, step2;
-                tableInput(size2, step2);
-
-                int numberOfKeys, *keysArray = nullptr;
-                string *valuesArray = nullptr;
-                performanceInput(numberOfKeys, keysArray, valuesArray);
-
-                HashTable hashMap2 = HashTable(size2, step2);
-                hashMap2.performance(numberOfKeys, keysArray, valuesArray, 10 * numberOfKeys);
-
-                delete[] keysArray;
-                delete[] valuesArray;
-                break;
+                hashMap.performance();
         }
     }
     while (index != 10);

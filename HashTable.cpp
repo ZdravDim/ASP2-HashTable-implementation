@@ -58,7 +58,7 @@ bool HashTable::insertKey(int key, string value, bool printError) {
     ++numOfKeys;
     if (adaptive) {
         if (fillRatio() >= SIZE_UP) adapt();
-        //privatePerformance();
+        privatePerformance();
     }
     return true;
 }
@@ -143,7 +143,7 @@ int HashTable::index(int key) {
     return (int)(findKey(key) - values);
 }
 
-void HashTable::performance() {
+void HashTable::performance(bool privatePerformance) {
     resetStatistics();
     int min, max;
     for (int i = 0; i < hashTableSize; ++i)
@@ -165,9 +165,12 @@ void HashTable::performance() {
         findKey(randomNumber, true);
     }
 
-    cout << endl << "Prosecan broj pristupa" << endl;
-    cout << "Uspesna pretraga: " << avgAccessSuccess() << endl;
-    cout << "Neuspesna pretraga: " << avgAccessUnsuccess() << endl;
+    if (!privatePerformance) {
+        cout << endl << "Prosecan broj pristupa" << endl;
+        cout << "Uspesna pretraga: " << avgAccessSuccess() << endl;
+        cout << "Neuspesna pretraga: " << avgAccessUnsuccess() << endl;
+    }
+
     resetStatistics();
 }
 
@@ -220,28 +223,7 @@ void HashTable::changeTableSize(int newSize) {
 }
 
 void HashTable::privatePerformance() {
-    resetStatistics();
-
-    int min, max;
-    for (int i = 0; i < hashTableSize; ++i)
-        if (keys[i] >= 0) {
-            min = max = keys[i];
-            break;
-        }
-
-    for (int i = 0; i < hashTableSize; ++i)
-        if (keys[i] >= 0) {
-            if (keys[i] > max) max = keys[i];
-            else if (keys[i] < min) min = keys[i];
-        }
-
-    int cnt = 0;
-    for (int i = 0; i < hashTableSize; ++i)
-        if (keys[i] >= 0) {
-            findKey(keys[i], true);
-            if (++cnt == numOfKeys) break;
-        }
-
+    performance(true);
     if (avgAccessSuccess() >= AVG_LIMIT || avgAccessUnsuccess() >= AVG_LIMIT) adapt();
     resetStatistics();
 }

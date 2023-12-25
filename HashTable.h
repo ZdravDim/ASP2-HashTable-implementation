@@ -27,7 +27,7 @@ public:
     double fillRatio() const;
     friend ostream& operator<<(ostream& os, const HashTable& table);
     int index(int key);
-    void performance();
+    void performance(bool privatePerformance = false);
     void setAdaptive();
 
 private:

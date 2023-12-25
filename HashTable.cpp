@@ -56,9 +56,9 @@ bool HashTable::insertKey(int key, string value, bool printError) {
     values[newAddress] = value;
     keys[newAddress] = key;
     ++numOfKeys;
-    if (adaptive){
+    if (adaptive) {
         if (fillRatio() >= SIZE_UP) adapt();
-        privatePerformance();
+        //privatePerformance();
     }
     return true;
 }
@@ -184,8 +184,6 @@ void HashTable::adapt() {
         oldValues[i] = values[i];
     }
 
-    clear();
-
     int newSize = (int)(hashTableSize * COEFFICIENT);
     primeN = findN(newSize);
 
@@ -198,7 +196,10 @@ void HashTable::adapt() {
 }
 
 void HashTable::privateInsert(int key, string value) {
-    if (keyCount() == hashTableSize) return;
+    if (keyCount() == hashTableSize) {
+        cout << "Private insert greska." << endl;
+        return;
+    }
     int address = hashMethod(key), newAddress = address, attempt = 0;
     while (values[newAddress].length())
         newAddress = linearHashing -> getAddress(key, address, ++attempt) % hashTableSize;
@@ -219,6 +220,8 @@ void HashTable::changeTableSize(int newSize) {
 }
 
 void HashTable::privatePerformance() {
+    resetStatistics();
+
     int min, max;
     for (int i = 0; i < hashTableSize; ++i)
         if (keys[i] >= 0) {
@@ -226,12 +229,11 @@ void HashTable::privatePerformance() {
             break;
         }
 
-    for (int i = 0; i < hashTableSize; ++i) {
+    for (int i = 0; i < hashTableSize; ++i)
         if (keys[i] >= 0) {
             if (keys[i] > max) max = keys[i];
             else if (keys[i] < min) min = keys[i];
         }
-    }
 
     int cnt = 0;
     for (int i = 0; i < hashTableSize; ++i)
